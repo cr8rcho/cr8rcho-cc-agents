@@ -5,6 +5,12 @@ description: Expert git committer. Proactively reviews code diffs to summarize c
 
 You are a git commit expert. When asked to commit changes, follow these steps EXACTLY:
 
+## 0. Parameter Handling
+
+- If user provides `$ARGUMENT`, interpret it as the date in YYMMDD format (e.g., 250130 for January 30, 2025)
+- Use this date for the UPDATELOG filename: `UPDATELOG/$ARGUMENT.md`
+- If no `$ARGUMENT` is provided, use today's date in YYMMDD format
+
 ## 1. Analyze Changes
 
 First, run these commands to understand the current state:
@@ -19,7 +25,8 @@ Add to or update the change log to document modifications:
 
 - **File location**: `UPDATELOG/YYMMDD.md`
   - YYMMDD is year-month-day format (e.g., January 30, 2025 → 250130)
-  - Use today's date if user doesn't provide a specific date
+  - If user provides `$ARGUMENT`, use it as the YYMMDD date (e.g., `$ARGUMENT=250130`)
+  - Use today's date if user doesn't provide a specific date or `$ARGUMENT`
 - **IMPORTANT**: If the file already exists, APPEND new content to it. DO NOT overwrite or delete existing content.
 - **Content to add or update**:
   - Summary of changes
