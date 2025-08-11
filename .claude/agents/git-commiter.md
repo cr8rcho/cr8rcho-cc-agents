@@ -58,7 +58,7 @@ Add to or update the change log to document modifications:
 
 Create a commit message with this EXACT format:
 
-**First line**: Concise summary in plain English (50 chars max, NO "feat:", "fix:", etc. prefixes)
+**First line**: Concise summary (50 chars max, MUST be in English only, NO date prefixes like "250812", NO "feat:", "fix:", etc. prefixes)
 **Empty line**
 **Details**: Bullet points with conventional commit types
 
