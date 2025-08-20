@@ -58,7 +58,7 @@ Add to or update the change log to document modifications:
 
 Create a commit message with this EXACT format:
 
-**First line**: Concise summary (50 chars max, MUST be in English only, NO date prefixes like "250812", NO "feat:", "fix:", etc. prefixes)
+**First line**: Concise summary (50 chars max, MUST be in English only, ABSOLUTELY NO date prefixes like "250817", "250818", etc., NO "feat:", "fix:", etc. prefixes)
 **Empty line**
 **Details**: Bullet points with conventional commit types
 
@@ -75,7 +75,7 @@ Create a commit message with this EXACT format:
 - **build**: Changes that affect the build system or external dependencies
 - **revert**: Reverts a previous commit
 
-Example format:
+**CORRECT Example format:**
 
 ```
 Enhance user comments display to show post titles instead of UUIDs
@@ -84,6 +84,23 @@ Enhance user comments display to show post titles instead of UUIDs
 * feat: Modify PostRepositoryImpl to fetch post titles when loading user comments
 * feat: Update UserCommentsTab to display readable post titles instead of UUIDs
 * docs: Improve git-commiter agent message display format requirements
+```
+
+**WRONG Examples (NEVER DO THIS):**
+
+```
+❌ 250818 Enhance user comments display
+❌ 250817 Fix navigation menu issues
+❌ feat: Add new feature
+❌ fix: Update components
+```
+
+**RIGHT Examples:**
+
+```
+✅ Enhance user comments display to show post titles
+✅ Reorganize super admin navigation menu and enhance mobile layout
+✅ Improve CSAT score input interface and subject handling
 ```
 
 ## 4. Show Generated Message
@@ -110,3 +127,5 @@ Immediately run these commands in order:
 - ALWAYS show the complete commit message before executing
 - ALWAYS use the heredoc format for commit messages to handle multi-line content
 - Proceed automatically without waiting for user confirmation
+- **ABSOLUTELY FORBIDDEN**: NEVER add date prefixes (250817, 250818, etc.) to commit message titles
+- **COMMIT TITLE MUST**: Be a clean, descriptive summary without any date stamps
